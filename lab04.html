@@ -37,9 +37,8 @@
 
     <script>
         function alertName() {
-            const name = document.getElementById('name').value;
+            name = document.getElementById('name').value;
             alert(`Hi ${name}!`);
-            return FALSE;
         }
         
         function changeColor() {
@@ -53,7 +52,7 @@
         function validateText() {
             const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
             if (validationRegex.test(document.getElementById('textInput').value)) {
-                alert('That is not right :(')
+                alert('Try Again :(')
                 return false
             }
             
