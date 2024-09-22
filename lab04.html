@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INST377 - Lab 4</title>
+    <link rel = "stylesheet" href="lab04.css">
+</head>
+<body>
+    <h1 id="heading">INST377 - Lab 4</h1>
+
+    <div class="container">
+        <div class="section" id="alertMe">
+            <form name="alertForm" onsubmit="return alertName()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <input type="submit">
+            </form>
+        </div>
+
+        <div class="section" id="colors">
+            <button onclick="changeColor()">Change Color</button>
+        </div>
+
+        <div class="section" id="tester">
+            <form name="textTest" onsubmit="return validateText(event)">
+                <label for="name">Text Tester:</label>
+                <input type="text" id="textInput" required>
+                <input type="submit">
+            </form>
+        </div>
+
+        <div class="section" id="addText">
+            <button onclick="addText()">Add Text</button>
+        </div>
+    </div>
+
+    <script>
+        function alertName() {
+            name = document.getElementById('name').value;
+            alert(`Hi ${name}!`);
+        }
+        
+        function changeColor() {
+            if(document.body.style.backgroundColor == 'aqua') {
+                const t = document.body.style.backgroundColor = 'orange';
+            } else {
+                const t = document.body.style.backgroundColor = 'aqua';
+            }
+        }
+
+        function validateText() {
+            const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (validationRegex.test(document.getElementById('textInput').value)) {
+                alert('Try Again :(')
+                return false
+            }
+            
+            return true;
+        }
+
+        function addText() {
+            const heading = document.getElementById('heading');
+            heading.innerText += ' - Add Text';
+        }
+    </script>
+</body>
+</html>
