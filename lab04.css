@@ -1,16 +1,18 @@
 body {
     background-color: aqua;
 }
-
 .container {
-    display: inline-block;
-    flex-wrap: wrap;
+    width: 50%;
+    float: left;
+    padding: 10px;
 }
 
 .section {
+    display: inline-block;
+    margin-bottom: 10px; 
     border: 2px solid hsl(0, 19%, 93%);
+    border-radius: 15px;
     background-color: blueviolet;
     color: white;
     padding: 15px;
-    margin-bottom: 10px;
 }
